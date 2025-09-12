@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sibongakonke Ntenga - ICT Applications Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        * { font-family: 'Inter', sans-serif; }
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .card-hover { transition: all 0.3s ease; }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        .skill-bar { transition: width 2s ease-in-out; }
+        .floating { animation: floating 3s ease-in-out infinite; }
+        @keyframes floating { 0%,100% {transform:translateY(0px);} 50%{transform:translateY(-10px);} }
+        .fade-in { opacity:0; transform:translateY(30px); transition:all 0.6s ease; }
+        .fade-in.visible { opacity:1; transform:translateY(0); }
+        .nav-link { position: relative; transition: color 0.3s ease; }
+        .nav-link::after {
+            content: ''; position:absolute; width:0; height:2px; bottom:-4px; left:0;
+            background: linear-gradient(135deg,#667eea 0%,#764ba2 100%);
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after { width:100%; }
+    </style>
+</head>
+<body class="bg-gray-900 text-white overflow-x-hidden">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-gray-900/95 backdrop-blur-sm z-50 border-b border-gray-800">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="text-xl font-bold gradient-text">Portfolio</div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link hover:text-purple-400">Home</a>
+                    <a href="#about" class="nav-link hover:text-purple-400">About</a>
+                    <a href="#projects" class="nav-link hover:text-purple-400">Projects</a>
+                    <a href="#skills" class="nav-link hover:text-purple-400">Skills</a>
+                    <a href="#contact" class="nav-link hover:text-purple-400">Contact</a>
+                </div>
+                <button id="mobile-menu-btn" class="md:hidden">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="md:hidden hidden bg-gray-800 border-t border-gray-700">
+            <div class="px-4 py-2 space-y-2">
+                <a href="#home" class="block py-2 hover:text-purple-400">Home</a>
+                <a href="#about" class="block py-2 hover:text-purple-400">About</a>
+                <a href="#projects" class="block py-2 hover:text-purple-400">Projects</a>
+                <a href="#skills" class="block py-2 hover:text-purple-400">Skills</a>
+                <a href="#contact" class="block py-2 hover:text-purple-400">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section id="home" class="min-h-screen flex items-center justify-center pt-16">
+        <div class="max-w-6xl mx-auto text-center">
+            <div class="floating">
+                <div class="w-32 h-32 mx-auto mb-8 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full flex items-center justify-center">
+                    <i class="fas fa-code text-4xl text-white"></i>
+                </div>
+            </div>
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 fade-in">
+                Hi, I'm <span class="gradient-text">Sibongakonke Ntenga</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-300 mb-8 fade-in">
+                ICT Applications Developer & Final Year Student
+            </p>
+            <p class="text-lg text-gray-400 mb-12 max-w-2xl mx-auto fade-in">
+                Passionate about building innovative solutions in web and mobile development. Skilled in .NET, Java, SQL, and Cloud Computing.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center fade-in">
+                <a href="#projects" class="bg-gradient-to-r from-purple-500 to-blue-500 px-8 py-3 rounded-lg font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300">
+                    <i class="fas fa-folder-open mr-2"></i>View My Work
+                </a>
+                <a href="#contact" class="border border-purple-500 px-8 py-3 rounded-lg font-semibold hover:bg-purple-500 transition-all duration-300">
+                    <i class="fas fa-envelope mr-2"></i>Get In Touch
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+<section id="about" class="py-20 bg-gray-800">
+    <div class="max-w-6xl mx-auto px-4">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 gradient-text fade-in">About Me</h2>
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <!-- Profile Image Column -->
+            <div class="flex justify-center fade-in">
+                <div class="relative">
+                    <!-- Circular profile image container -->
+                    <div class="w-64 h-64 mx-auto rounded-full overflow-hidden border-4 border-purple-500/30 shadow-lg shadow-purple-500/20">
+                        <!-- Replace with your actual image path -->
+                        <img src="profile-image.jpg" 
+                             alt="Sibongakonke Ntenga" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    <!-- Decorative elements -->
+                    <div class="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-gradient-to-r from-purple-500 to-blue-500"></div>
+                    <div class="absolute -bottom-2 -left-2 w-5 h-5 rounded-full bg-gradient-to-r from-blue-500 to-purple-500"></div>
+                </div>
+            </div>
+            
+            <!-- Content Column -->
+            <div class="fade-in">
+                <h3 class="text-2xl font-semibold mb-6">My Journey</h3>
+                <p class="text-gray-300 mb-6">
+                    I'm completing my Diploma in ICT: Applications Development at Durban University of Technology.
+                    I specialize in full-stack development using C# .NET, HTML, CSS, JavaScript, and SQL databases.
+                </p>
+                <p class="text-gray-300 mb-6">
+                    I have gained hands-on experience through academic, freelance, and team-based projects, always eager to explore cloud technologies and scalable solutions.
+                </p>
+                
+                <div class="bg-gray-700 p-6 rounded-xl mt-8">
+                    <h4 class="text-xl font-semibold mb-6">Quick Facts</h4>
+                    <div class="space-y-4">
+                        <div class="flex items-center"><i class="fas fa-map-marker-alt text-purple-400 w-6"></i><span class="ml-3">Durban, South Africa</span></div>
+                        <div class="flex items-center"><i class="fas fa-university text-purple-400 w-6"></i><span class="ml-3">DUT - ICT Applications Development</span></div>
+                        <div class="flex items-center"><i class="fas fa-calendar text-purple-400 w-6"></i><span class="ml-3">Expected Graduation: 2025</span></div>
+                        <div class="flex items-center"><i class="fas fa-laptop-code text-purple-400 w-6"></i><span class="ml-3">.NET & Cloud Enthusiast</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Projects -->
+    <section id="projects" class="py-20">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 gradient-text fade-in">My Projects</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Project 1 -->
+                <div class="bg-gray-800 rounded-xl card-hover p-6 fade-in">
+                    <h3 class="text-xl font-semibold mb-4"><i class="fas fa-notes-medical text-purple-400 mr-2"></i>MediLink Digital Medical Records</h3>
+                    <p class="text-gray-300 mb-4">A patient record management system developed with Code Brigade for secure and efficient healthcare data handling.</p>
+                    <a href="https://github.com/van-der-ntenga/MediLinkPRMSys" target="_blank" class="text-purple-400 hover:underline"><i class="fab fa-github mr-2"></i>GitHub</a>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="bg-gray-800 rounded-xl card-hover p-6 fade-in">
+                    <h3 class="text-xl font-semibold mb-4"><i class="fas fa-mobile-alt text-blue-400 mr-2"></i>Suave Co. Men's Boutique App</h3>
+                    <p class="text-gray-300 mb-4">An Android shopping app built with Java, XML, and SQLite, enabling smooth browsing and ordering for a clothing boutique.</p>
+                    <a href="https://github.com/van-der-ntenga/SuaveCo" target="_blank" class="text-purple-400 hover:underline"><i class="fab fa-github mr-2"></i>GitHub</a>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="bg-gray-800 rounded-xl card-hover p-6 fade-in">
+                    <h3 class="text-xl font-semibold mb-4"><i class="fas fa-user-graduate text-green-400 mr-2"></i>FutureTech Student Information System</h3>
+                    <p class="text-gray-300 mb-4">Manages student records using Azure Cosmos DB and Blob Storage for secure and scalable cloud-based data management.</p>
+                    <a href="https://github.com/van-der-ntenga/FutureTechApp" target="_blank" class="text-purple-400 hover:underline"><i class="fab fa-github mr-2"></i>GitHub</a>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="bg-gray-800 rounded-xl card-hover p-6 fade-in">
+                    <h3 class="text-xl font-semibold mb-4"><i class="fas fa-handshake text-yellow-400 mr-2"></i>PayPledge</h3>
+                    <p class="text-gray-300 mb-4">A contract-first microtransaction platform for trustless peer-to-peer marketplaces.</p>
+                    <a href="https://github.com/van-der-ntenga/PayPledge" target="_blank" class="text-purple-400 hover:underline"><i class="fab fa-github mr-2"></i>GitHub</a> |
+                    <a href="https://paypledge-dqavf3hpehf6fyby.southafricanorth-01.azurewebsites.net/" target="_blank" class="text-blue-400 hover:underline"><i class="fas fa-external-link-alt mr-2"></i>Live Demo</a>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="bg-gray-800 rounded-xl card-hover p-6 fade-in">
+                    <h3 class="text-xl font-semibold mb-4"><i class="fas fa-utensils text-red-400 mr-2"></i>Delos Lounge & Dining System</h3>
+                    <p class="text-gray-300 mb-4">A restaurant and tourism system for reservations, orders, events, and bookings. (Private project)</p>
+                    <a href="https://github.com/Thabza20/DelosApp" target="_blank" class="text-purple-400 hover:underline"><i class="fab fa-github mr-2"></i>GitHub</a>
+                    <a href="https://2025grp17s2-dnaefza4f0dycddn.southafricanorth-01.azurewebsites.net/" target="_blank" class="text-blue-400 hover:underline"><i class="fas fa-external-link-alt mr-2"></i>Live Demo</a>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="bg-gray-800 rounded-xl card-hover p-6 fade-in">
+                    <h3 class="text-xl font-semibold mb-4"><i class="fas fa-tools text-gray-400 mr-2"></i>TRSH Media Support</h3>
+                    <p class="text-gray-300 mb-4">ASP.NET Core MVC system for managing sound system repair tickets at The Revelation Spiritual Home. (Private project)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="py-20 bg-gray-800">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 gradient-text fade-in">Technical Skills</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gray-700 p-6 rounded-xl fade-in">
+                    <h3 class="text-xl font-semibold mb-6 flex items-center"><i class="fas fa-code text-purple-400 mr-3"></i>Frontend</h3>
+                    <ul class="text-gray-300 space-y-2">
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                        <li>React (basics)</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-700 p-6 rounded-xl fade-in">
+                    <h3 class="text-xl font-semibold mb-6 flex items-center"><i class="fas fa-server text-green-400 mr-3"></i>Backend</h3>
+                    <ul class="text-gray-300 space-y-2">
+                        <li>C#</li>
+                        <li>Java (Android)</li>
+                        <li>ASP.NET Core MVC</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-700 p-6 rounded-xl fade-in">
+                    <h3 class="text-xl font-semibold mb-6 flex items-center"><i class="fas fa-database text-blue-400 mr-3"></i>Databases & Cloud</h3>
+                    <ul class="text-gray-300 space-y-2">
+                        <li>SQL Server (SSMS)</li>
+                        <li>MySQL</li>
+                        <li>Azure Cosmos DB, Blob Storage</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+<section id="contact" class="py-20">
+    <div class="max-w-4xl mx-auto px-4">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 gradient-text fade-in">Get In Touch</h2>
+        <div class="grid md:grid-cols-2 gap-12">
+            <div class="fade-in">
+                <h3 class="text-2xl font-semibold mb-6">Let's Connect</h3>
+                <p class="text-gray-300 mb-8 leading-relaxed">
+                    I'm open to opportunities, collaborations, and discussions in software development and tech innovation. 
+                    Reach out through any of the platforms below.
+                </p>
+                <div class="space-y-4">
+                    <div class="flex items-center">
+                        <i class="fas fa-envelope text-purple-400 w-6"></i>
+                        <a href="mailto:sibongakonke.ntenga@outlook.com" target="_blank" class="ml-3 hover:text-purple-400">
+                            sibongakonke.ntenga@outlook.com
+                        </a>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fab fa-linkedin text-purple-400 w-6"></i>
+                        <a href="https://www.linkedin.com/in/sibongakonke-ntenga/" target="_blank" class="ml-3 hover:text-purple-400">
+                            Sibongakonke Ntenga
+                        </a>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fab fa-github text-purple-400 w-6"></i>
+                        <a href="https://github.com/van-der-ntenga/" target="_blank" class="ml-3 hover:text-purple-400">
+                            github.com/van-der-ntenga
+                        </a>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fab fa-whatsapp text-purple-400 w-6"></i>
+                        <a href="https://wa.me/27677890505" target="_blank" class="ml-3 hover:text-purple-400">
+                            +27 67 789 0505
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="fade-in">
+                <!-- Updated form with FormSubmit action -->
+                <form 
+                    action="https://formsubmit.co/sibongakonke.ntenga@outlook.com" 
+                    method="POST"
+                    class="space-y-6" 
+                    id="contact-form"
+                >
+                    <!-- FormSubmit configuration -->
+                    <input type="hidden" name="_subject" value="New contact form submission from portfolio">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html">
+                    <input type="hidden" name="_captcha" value="false">
+                    
+                    <div>
+                        <label for="name" class="block text-sm font-medium mb-2">Name</label>
+                        <input 
+                            type="text" 
+                            id="name"
+                            name="name"
+                            required
+                            class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300" 
+                            placeholder="Your Name"
+                        >
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium mb-2">Email</label>
+                        <input 
+                            type="email" 
+                            id="email"
+                            name="email"
+                            required
+                            class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300" 
+                            placeholder="your.email@example.com"
+                        >
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium mb-2">Message</label>
+                        <textarea 
+                            id="message"
+                            name="message"
+                            rows="5" 
+                            required
+                            class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300" 
+                            placeholder="Your message here..."
+                        ></textarea>
+                    </div>
+                    <button 
+                        type="submit" 
+                        class="w-full bg-gradient-to-r from-purple-500 to-blue-500 px-8 py-3 rounded-lg font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300"
+                    >
+                        <i class="fas fa-paper-plane mr-2"></i>Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 py-8 border-t border-gray-700 text-center text-gray-400">
+        © 2025 Sibongakonke Ntenga. All rights reserved.
+    </footer>
+
+    <!-- JavaScript for interactive elements -->
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+
+        // Fade-in animation on scroll
+        function checkFade() {
+            const elements = document.querySelectorAll('.fade-in');
+            elements.forEach(el => {
+                const elementTop = el.getBoundingClientRect().top;
+                const elementVisible = 150;
+                if (elementTop < window.innerHeight - elementVisible) {
+                    el.classList.add('visible');
+                }
+            });
+        }
+
+        // Run on load and scroll
+        window.addEventListener('load', checkFade);
+        window.addEventListener('scroll', checkFade);
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
